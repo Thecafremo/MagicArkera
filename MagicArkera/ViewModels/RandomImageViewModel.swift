@@ -94,7 +94,7 @@ class RandomImageViewModel {
     func appropriateText() -> String? {
         
         if (self.isRetrievingData) {
-            return "Loading..."
+            return NSLocalizedString("Loading...", comment: "")
         }
         
         if let error = self.error {
