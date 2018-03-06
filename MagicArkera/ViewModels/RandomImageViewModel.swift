@@ -110,7 +110,7 @@ class RandomImageViewModel {
     func appropriateImage() -> UIImage? {
         
         if (error != nil) {
-            return nil //Return the appropriate image
+            return UIImage.init(named: "failureImage")
         }
         
         return self.image
