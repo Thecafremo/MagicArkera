@@ -78,11 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				41A27089204E23AA00745B7E /* AppDelegate.swift */,
-				41A2708B204E23AA00745B7E /* ViewController.swift */,
-				41A2708D204E23AA00745B7E /* Main.storyboard */,
-				41A27090204E23AA00745B7E /* Assets.xcassets */,
-				41A27092204E23AA00745B7E /* LaunchScreen.storyboard */,
-				41A27095204E23AA00745B7E /* Info.plist */,
+				41A270AA204E289400745B7E /* Journeys */,
+				41A270A9204E287300745B7E /* Resources */,
 			);
 			path = MagicArkera;
 			sourceTree = "<group>";
@@ -94,6 +91,25 @@
 				41A270A0204E23AA00745B7E /* Info.plist */,
 			);
 			path = MagicArkeraTests;
+			sourceTree = "<group>";
+		};
+		41A270A9204E287300745B7E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				41A27095204E23AA00745B7E /* Info.plist */,
+				41A27092204E23AA00745B7E /* LaunchScreen.storyboard */,
+				41A27090204E23AA00745B7E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		41A270AA204E289400745B7E /* Journeys */ = {
+			isa = PBXGroup;
+			children = (
+				41A2708D204E23AA00745B7E /* Main.storyboard */,
+				41A2708B204E23AA00745B7E /* ViewController.swift */,
+			);
+			path = Journeys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
