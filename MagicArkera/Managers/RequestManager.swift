@@ -13,7 +13,7 @@ class RequestManager: RequestManageable {
     
     //MARK: - Methods.
     
-    func retrieveImage(from urlString: String, requestCompletionBlock: @escaping (Result<UIImage>) -> Void) {
+    func retrieveImage(from urlString: String, resultCompletionBlock: @escaping (Result<UIImage>) -> Void) {
         
         guard let url = URL.init(string: urlString) else {
             

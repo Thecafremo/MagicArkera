@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 protocol RequestManageable {
-    func retrieveImage(from urlString: String, requestCompletionBlock: @escaping (Result<UIImage>) -> Void)
+    func retrieveImage(from urlString: String, resultCompletionBlock: @escaping (Result<UIImage>) -> Void)
 }
