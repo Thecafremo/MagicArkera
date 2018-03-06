@@ -31,6 +31,7 @@ class RandomImageViewModel {
        return dateFormatter
     }()
     
+    
     //MARK: - LifeCycle's.
     
     deinit {
