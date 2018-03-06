@@ -13,6 +13,10 @@
 		41A27091204E23AA00745B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A27090204E23AA00745B7E /* Assets.xcassets */; };
 		41A27094204E23AA00745B7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A27092204E23AA00745B7E /* LaunchScreen.storyboard */; };
 		41A2709F204E23AA00745B7E /* MagicArkeraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A2709E204E23AA00745B7E /* MagicArkeraTests.swift */; };
+		41A270AC204E2AF600745B7E /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A270AB204E2AF600745B7E /* Defines.swift */; };
+		41A270AF204E2DE000745B7E /* RequestManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A270AE204E2DE000745B7E /* RequestManageable.swift */; };
+		41A270B2204E31BF00745B7E /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A270B1204E31BF00745B7E /* RequestManager.swift */; };
+		41A270B8204E379200745B7E /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A270B7204E379200745B7E /* ImageAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		41A2709A204E23AA00745B7E /* MagicArkeraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicArkeraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A2709E204E23AA00745B7E /* MagicArkeraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicArkeraTests.swift; sourceTree = "<group>"; };
 		41A270A0204E23AA00745B7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41A270AB204E2AF600745B7E /* Defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
+		41A270AE204E2DE000745B7E /* RequestManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManageable.swift; sourceTree = "<group>"; };
+		41A270B1204E31BF00745B7E /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		41A270B7204E379200745B7E /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				41A27089204E23AA00745B7E /* AppDelegate.swift */,
+				41A270B6204E378200745B7E /* APIs */,
+				41A270AD204E2DA900745B7E /* Protocols */,
+				41A270B0204E319700745B7E /* Managers */,
 				41A270AA204E289400745B7E /* Journeys */,
 				41A270A9204E287300745B7E /* Resources */,
 			);
@@ -96,6 +107,7 @@
 		41A270A9204E287300745B7E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				41A270AB204E2AF600745B7E /* Defines.swift */,
 				41A27095204E23AA00745B7E /* Info.plist */,
 				41A27092204E23AA00745B7E /* LaunchScreen.storyboard */,
 				41A27090204E23AA00745B7E /* Assets.xcassets */,
@@ -110,6 +122,30 @@
 				41A2708B204E23AA00745B7E /* ViewController.swift */,
 			);
 			path = Journeys;
+			sourceTree = "<group>";
+		};
+		41A270AD204E2DA900745B7E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				41A270AE204E2DE000745B7E /* RequestManageable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		41A270B0204E319700745B7E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				41A270B1204E31BF00745B7E /* RequestManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		41A270B6204E378200745B7E /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				41A270B7204E379200745B7E /* ImageAPI.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,8 +251,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A270B2204E31BF00745B7E /* RequestManager.swift in Sources */,
+				41A270AF204E2DE000745B7E /* RequestManageable.swift in Sources */,
 				41A2708C204E23AA00745B7E /* ViewController.swift in Sources */,
 				41A2708A204E23AA00745B7E /* AppDelegate.swift in Sources */,
+				41A270B8204E379200745B7E /* ImageAPI.swift in Sources */,
+				41A270AC204E2AF600745B7E /* Defines.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MagicArkera/Info.plist;
+				INFOPLIST_FILE = MagicArkera/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.magicdealers.MagicArkera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -384,7 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MagicArkera/Info.plist;
+				INFOPLIST_FILE = MagicArkera/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.magicdealers.MagicArkera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
