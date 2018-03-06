@@ -9,17 +9,39 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //MARK: - Properties.
+    
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    
+    private var randomImageViewModel = RandomImageViewModel()
+    
+    
+    //MARK: - LifeCycle's.
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.startRetrievingImages()
     }
+    
+    
+    //MARK: - Private Methods.
+    
+    private func startRetrievingImages() {
+        
+        self.randomImageViewModel.retrieve { [unowned self] in
+            
+//            UIView.transition(with: self.label, duration: animationDuration, options: .transitionCrossDissolve, animations: {
+                self.label.text = self.randomImageViewModel.appropriateText()
+//            }, completion: nil)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            UIView.transition(with: self.imageView, duration: animationDuration, options: .transitionCrossDissolve, animations: {
+                self.imageView.image = self.randomImageViewModel.appropriateImage()
+            }, completion: nil)
+        }
     }
-
-
 }
 

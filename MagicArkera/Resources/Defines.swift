@@ -8,7 +8,30 @@
 
 import Foundation
 
+//MARK: - Enums.
+
 enum Result<T> {
+    
     case success(T)
-    case failure(Any)
+    case failure(Error)
+    
+    var value: Any {
+        
+        switch self {
+            case .success(let value):
+                return value
+            case .failure(let value):
+                return value
+        }
+    }    
 }
+
+
+//MARK: - Closures.
+
+typealias CompletionBlock = () -> Void
+
+
+//MARK: - Constants.
+
+let animationDuration = 0.3

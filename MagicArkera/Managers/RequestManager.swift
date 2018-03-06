@@ -17,23 +17,26 @@ class RequestManager: RequestManageable {
         
         guard let url = URL.init(string: urlString) else {
             
-            requestCompletionBlock(.failure("Invalid URL."))
+            requestCompletionBlock(.failure(NSError.init(with: "Invalid URL.")))
             return
         }
         
         let dataTask = URLSession.shared.dataTask(with: url) { (data: Data?, urlResponse: URLResponse?, error: Error?) in
             
-            if let error = error {
-                requestCompletionBlock(.failure(error.localizedDescription))
-                return
+            DispatchQueue.main.async {
+                
+                if let error = error {
+                    requestCompletionBlock(.failure(error))
+                    return
+                }
+                
+                guard let data = data, let image = UIImage.init(data: data) else {
+                    requestCompletionBlock(.failure(NSError.init(with: "No Data.")))
+                    return
+                }
+                
+                requestCompletionBlock(.success(image))
             }
-            
-            guard let data = data, let image = UIImage.init(data: data) else {
-                requestCompletionBlock(.failure("No Data."))
-                return
-            }
-            
-            requestCompletionBlock(.success(image))
         }
         
         dataTask.resume()
