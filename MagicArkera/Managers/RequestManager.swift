@@ -17,7 +17,7 @@ class RequestManager: RequestManageable {
         
         guard let url = URL.init(string: urlString) else {
             
-            requestCompletionBlock(.failure(NSError.init(with: "Invalid URL.")))
+            resultCompletionBlock(.failure(NSError.init(with: "Invalid URL.")))
             return
         }
         
@@ -26,16 +26,16 @@ class RequestManager: RequestManageable {
             DispatchQueue.main.async {
                 
                 if let error = error {
-                    requestCompletionBlock(.failure(error))
+                    resultCompletionBlock(.failure(error))
                     return
                 }
                 
                 guard let data = data, let image = UIImage.init(data: data) else {
-                    requestCompletionBlock(.failure(NSError.init(with: "No Data.")))
+                    resultCompletionBlock(.failure(NSError.init(with: "No Data.")))
                     return
                 }
                 
-                requestCompletionBlock(.success(image))
+                resultCompletionBlock(.success(image))
             }
         }
         
